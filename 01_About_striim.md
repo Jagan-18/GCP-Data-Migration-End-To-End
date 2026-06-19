@@ -156,6 +156,57 @@ INPUT FROM OracleStream;
 ```
 
 
+---
+# Differences between Striim Platform and Striim Cloud.
+- Striim is available as two different products: Striim Platform and Striim Cloud.
+1. **Striim Platform** is installed on your hardware or deployed on a virtual machine in AWS, Azure, or Google Cloud Platform. You must configure and manage it yourself.
+2. **Striim Cloud** is a fully managed SaaS platform available on AWS, Azure, or Google Cloud Platform
+
+### Striim Platform vs Striim Cloud
+
+| Feature                 | Striim Platform                                              | Striim Cloud                                                    |
+| ----------------------- | ------------------------------------------------------------ | --------------------------------------------------------------- |
+| Deployment              | Self-hosted (On-Prem, AWS, Azure, GCP VM, Kubernetes)        | Fully managed SaaS                                              |
+| Management              | Customer manages installation, upgrades, backups, monitoring | Striim manages infrastructure and maintenance                   |
+| Infrastructure          | Your servers/VMs                                             | Striim-managed cloud environment                                |
+| Scaling                 | Manual or customer-controlled                                | Automatic scaling options                                       |
+| Upgrades                | Customer responsibility                                      | Managed by Striim                                               |
+| Cost Model              | License + infrastructure cost                                | Subscription/SaaS pricing                                       |
+| Customization           | High customization and OS-level access                       | Limited infrastructure access                                   |
+| Security Control        | Full control over network and security                       | Managed security with cloud controls                            |
+| Monitoring              | Direct access to logs, JMX, server files                     | UI-based monitoring only                                        |
+| Multi-Server Clustering | Supported                                                    | Supported only in Mission Critical edition                      |
+| Best For                | Enterprises requiring complete control                       | Organizations wanting quick setup and less operational overhead |
+
+
+### DevOps Perspective:
+As a DevOps Engineer:
+
+```text
+Striim Platform
+----------------
+Install Striim
+Manage VM/K8s
+Monitor Logs
+Perform Upgrades
+Handle Backups
+
+Striim Cloud
+------------
+Create Pipeline
+Configure Source
+Configure Target
+Monitor Jobs
+Striim manages everything else
+```
+
+So, think of it like:
+
+* **Striim Platform = Self-managed Kubernetes cluster**
+* **Striim Cloud = Managed Kubernetes service (GKE/EKS/AKS)**
+
+---
+
 
 #### Q1: What is Striim?
 **Answer:**
