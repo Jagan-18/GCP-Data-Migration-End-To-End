@@ -55,9 +55,7 @@
    * Operational reporting with live data
 
 ---
-
-## Striim Architecture
-
+## Striim Architecture:
 ```text
 Source Database
       |
@@ -74,7 +72,7 @@ Source Database
  Target System
 ```
 
-Example:
+#### Example:
 
 ```text
 Oracle
@@ -90,13 +88,9 @@ Snowflake
 ```
 
 ---
-
-## Important Components
-
+## Important Components:
 ### Source
-
 Reads data from:
-
 * Oracle
 * SQL Server
 * MySQL
@@ -104,7 +98,6 @@ Reads data from:
 * Kafka
 
 ### Stream
-
 In-memory continuous flow of events.
 
 ### CQ (Continuous Query)
@@ -121,8 +114,7 @@ FROM InputStream
 WHERE amount > 1000;
 ```
 
-### Target
-
+### Target:
 Writes data to:
 
 * Snowflake
@@ -132,9 +124,7 @@ Writes data to:
 * Databases
 
 ---
-
 ## What is TQL in Striim?
-
 **TQL (Tungsten Query Language)** is Striim's SQL-like language used to create applications, streams, sources, targets, and transformations.
 
 Example:
@@ -160,10 +150,9 @@ USING SnowflakeWriter (
 INPUT FROM OracleStream;
 ```
 
-### Interview Question
+
 
 **Q: What is Striim?**
-
 **Answer:**
 Striim is a real-time data integration and streaming platform that uses Change Data Capture (CDC) to continuously capture and replicate data changes from source systems to target systems such as Kafka, Snowflake, BigQuery, and cloud databases with low latency.
 
