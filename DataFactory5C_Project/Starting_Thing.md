@@ -314,3 +314,299 @@ Do **not** start with Terraform or Harness first.
 For your project, **Striim + CDC + Oracle → Spanner flow** is the foundation. Once you understand that flow, all the DevOps activities will make much more sense.
 
 Based on your previous DevOps experience with Jenkins, GitHub, Terraform, Helm, and CI/CD, you already have a good foundation. The biggest new area for you is **Data Migration and Striim**, so spend most of your learning time there first.
+
+---
+Since you're completely new to **Data Migration + Striim**, don't try to learn everything together.
+
+# Your Learning Roadmap (Follow This Exactly)
+
+## Phase 1 (Day 1-2) – Understand the Project Flow
+
+First learn:
+
+### 1. What is Data Migration?
+
+Simple example:
+
+```text
+Old Database (Oracle)
+        |
+        v
+New Database (Cloud Spanner)
+```
+
+Moving data from Oracle to Spanner is called Data Migration.
+
+### 2. What is CDC (Change Data Capture)?
+
+Example:
+
+Customer inserted into Oracle:
+
+```sql
+INSERT INTO CUSTOMER VALUES (101,'Jagadeesh');
+```
+
+Striim captures the change and sends it to Spanner automatically.
+
+This is CDC.
+
+### Goal
+
+Understand:
+
+```text
+Oracle --> Striim --> Cloud Spanner
+```
+
+Nothing else.
+
+---
+
+# Phase 2 (Day 3-5) – Learn Oracle Basics
+
+You are not a DBA.
+
+But you must know:
+
+### Learn:
+
+* What is a Database?
+* What is a Table?
+* Primary Key
+* Insert
+* Update
+* Delete
+* Schema
+
+Practice:
+
+```sql
+SELECT * FROM CUSTOMER;
+
+INSERT INTO CUSTOMER VALUES(1,'ABC');
+
+UPDATE CUSTOMER
+SET NAME='XYZ'
+WHERE ID=1;
+```
+
+### Goal
+
+Understand what Striim is reading from Oracle.
+
+---
+
+# Phase 3 (Day 6-8) – Learn Striim
+
+This is your MOST IMPORTANT topic.
+
+Learn architecture:
+
+```text
+Oracle Reader
+      |
+      v
+    Stream
+      |
+      v
+      CQ
+      |
+      v
+Target Writer
+      |
+      v
+Cloud Spanner
+```
+
+Understand:
+
+### Oracle Reader
+
+Reads Oracle changes.
+
+### Stream
+
+Temporary data flow.
+
+### CQ
+
+Continuous Query.
+
+### Target Writer
+
+Writes to Spanner.
+
+### Goal
+
+Be able to explain:
+
+> "How data moves from Oracle to Cloud Spanner using Striim."
+
+---
+
+# Phase 4 (Day 9-11) – Learn GCP
+
+Focus only on:
+
+### IAM
+
+Permissions.
+
+### VPC
+
+Networking.
+
+### Cloud Spanner
+
+Target database.
+
+### Cloud Storage
+
+Backup files.
+
+### Logging
+
+Application logs.
+
+### Goal
+
+Know where to check logs and access.
+
+---
+
+# Phase 5 (Day 12-14) – Learn Harness
+
+Since you already know Jenkins concepts, this will be easy.
+
+Learn:
+
+```text
+Connector
+Delegate
+Pipeline
+Stage
+Environment
+Secrets
+```
+
+Understand:
+
+```text
+Git Repo
+   |
+Harness Pipeline
+   |
+Deploy Striim Config
+```
+
+---
+
+# Phase 6 (Day 15-17) – Learn Datadog
+
+Learn:
+
+### Dashboards
+
+* CPU
+* Memory
+* Network
+* Errors
+
+### Alerts
+
+* Pipeline Down
+* CDC Lag
+* High CPU
+
+---
+
+# Phase 7 (Day 18-20) – Learn Terraform
+
+Since you already have Terraform knowledge:
+
+Focus on:
+
+```text
+Provider
+Resource
+Module
+State File
+Variables
+```
+
+GCP Resources:
+
+* VPC
+* Service Accounts
+* Cloud Storage
+* Cloud Spanner
+
+---
+
+# What Your Lead Will Mostly Ask You Initially
+
+### Week 1
+
+Can you:
+
+* Access GCP?
+* Access Striim?
+* Access Harness?
+* Access Datadog?
+
+### Week 2
+
+Can you:
+
+* Check pipeline status?
+* Check CDC lag?
+* Check logs?
+* Raise incidents?
+
+### Week 3+
+
+Can you:
+
+* Deploy changes?
+* Update configurations?
+* Support migration cutovers?
+
+---
+
+# First 5 Questions to Ask Your Lead Tomorrow
+
+1. Can you share the architecture diagram?
+2. Can you show one running Striim pipeline?
+3. Where do we monitor CDC lag?
+4. Which deployments are done through Harness?
+5. Do we have Terraform repositories for infrastructure?
+
+---
+
+# If I Were You
+
+I would start with only these 3 topics this week:
+
+### Day 1
+
+* What is Data Migration?
+* What is CDC?
+
+### Day 2
+
+* Oracle Basics
+
+### Day 3
+
+* Striim Architecture
+
+After that, everything else (GCP, Harness, Datadog, Terraform) will become much easier because you'll understand the actual business flow.
+
+**Remember:** As a DevOps Engineer in this project, the most valuable knowledge is:
+
+```text
+Oracle --> CDC --> Striim --> Cloud Spanner
+```
+
+Master this flow first. Everything else supports that flow.
