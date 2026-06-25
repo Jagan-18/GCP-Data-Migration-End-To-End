@@ -207,7 +207,7 @@ Cloud Spanner is commonly used in applications that require:
 * Airline reservation systems
 
 ---
-### 1.8 Why Is Your Company Migrating to Cloud Spanner?
+### Why Is Your Company Migrating to Cloud Spanner?
 
 Based on your project, the migration flow is:
 
@@ -274,7 +274,7 @@ Project
 | High Availability | Manual Setup | Built-In      |
 
 ---
-### 8. Cloud Spanner vs MySQL: 
+### Cloud Spanner vs MySQL: 
 
 | Feature            | MySQL    | Cloud Spanner |
 | ------------------ | -------- | ------------- |
@@ -285,7 +285,7 @@ Project
 | Managed by Google  | No       | Yes           |
 
 ---
-### 9. Where is Cloud Spanner Used?
+###  Where is Cloud Spanner Used?
 
 #### Banking:
 ```text
